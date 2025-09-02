@@ -177,9 +177,6 @@ impl<P: Provider<Ethereum> + Clone> RpcDb<P> {
 
         if self.data.borrow().accounts.contains_key(&address) {
             let acc = self.data.borrow().accounts.get(&address).unwrap().clone();
-            if acc.is_empty() {
-                println!("gupeng - empty account");
-            }
             return Ok(acc);
         }
 
